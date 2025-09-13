@@ -1,31 +1,22 @@
+import { useState } from 'react';
 import './App.css'
+import Navbar from './Navbar'
 
-function Components() {
-  return (
-    <div>
-
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis non consequatur similique, officiis nobis est, dolorem, enim corrupti eaque labore libero veniam perspiciatis!</p>
-
-    </div>
-  )
-}
 
 function App() {
+  let [count, setCount] = useState(0);
+
+ 
 
 
   return (
 
     <div>
+      <Navbar data={count}/>
       
-      <h1>joydeb maity</h1>
-      <button>
-        click here <br />
-        {2 * 3}
-      </button>
+   
+     
 
-      <Components/>
-      <Components/>
-      <h2>hey</h2>
     </div>
 
 
