@@ -1,17 +1,20 @@
-import React from 'react'
 
+import Footer from "./components/Footer"
+import Header from "./components/Header"
+import Hero from "./components/Hero"
 
-
-
-function App(){
-  return(
+function App() {
+  return (
 
     <>
-    
-    <h1 className="bg-red-950">kaise ho vai log</h1>
-    <button className='bg-amber-300  rounded-2xl'>click me</button>
+      <Header />
+      <Hero/>
+      <Footer/>
 
- 
+
+     
+
+
     </>
   )
 }
