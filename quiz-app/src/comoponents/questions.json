@@ -1,0 +1,32 @@
+[
+    {
+        "question":"What does css stand for?",
+        "options":["central style sheets", "cascading simple style", "cascading style sheets", "central syllabus system"],
+        "answer":"cascading style sheets"
+    },
+    {
+        "question":"Which language runs in a web browser?",
+        "options":["java", "javascript", "c++", "python"],
+        "answer":"javascript"
+    },
+    {
+        "question":"What year was javascript invention?",
+        "options":["1999", "1995", "1800", "1902"],
+        "answer":"1995"
+    },
+    {
+        "question":"What does css stand for?",
+        "options":["central style sheets", "cascading simple style", "cascading style sheets", "central syllabus system"],
+        "answer":"cascading style sheets"
+    },
+    {
+        "question":"Which language runs in a web browser?",
+        "options":["java", "javascript", "c++", "python"],
+        "answer":"javascript"
+    },
+    {
+        "question":"What year was javascript invention?",
+        "options":["1999", "1995", "1800", "1902"],
+        "answer":"1995"
+    }
+]
