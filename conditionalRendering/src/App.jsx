@@ -4,19 +4,34 @@ import ComponentB from './components/ComponentB'
 import ComponentC from './components/ComponentC'
 
 const App = () => {
-   const option = 'a';
 
-  let Component = option === 'a' ? ComponentA : ComponentB
+   const [statusOption, setStatusOption] = useState("");
 
+   const status = {
+      loading: <h1>loading.....</h1>,
+      error: <h1>Appeared a error</h1>,
+      success: <h1>successfully landed on moon</h1>
 
- return(
-  <>
+   }
+return(
+   <>
+   {status[statusOption]}
 
-  <Component/>
+   <button onClick={()=>{
+      setStatusOption('loading')
+   }}>loading</button>
 
+   <button onClick={()=>{
+      setStatusOption('error')
+   }}>error</button>
 
-  </>
- )
+   <button onClick={()=>{
+      setStatusOption('success')
+   }}>success</button>
+   </>
+)
+   
+ 
 
 
 }
