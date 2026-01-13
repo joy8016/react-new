@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+@plugin 'daisyui';
+ html{
+  background-color: rgba(90, 35, 35, 0.669);
+}
+.scrollbar-none{
+  scrollbar-width: none;
+}
+
