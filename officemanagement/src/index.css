@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+@plugin 'daisyui';
+
+body, html{
+    background-color: rgb(181, 122, 80);
+}
