@@ -11,6 +11,9 @@ function App() {
     {id:1, name:'joydeb', age:23},
     {id:2, name:'sagar', age:43},
     {id:3, name:'ajay', age:26},
+    {id:4, name:'joydeb', age:3},
+    {id:5, name:'sagar', age:4},
+    {id:6, name:'ajay', age:6},
   ];
 
 
@@ -28,7 +31,8 @@ function App() {
     {
       arr.map((items)=>{
         return(
-          <UserCard key={items.id} userDetails={items}/>
+          // items.age>18 && <UserCard key={items.id} userDetails={items}/>
+         <UserCard key={items.id} userDetails={items}/>
         )
       })
     }
@@ -57,7 +61,9 @@ function App() {
           {
             items.map((nestedItems, index)=>{
               return(
-                <h2 key={index}>{nestedItems}</h2>
+                // <h2 key={index}>{nestedItems}</h2>
+                <UserCard key={index} userDetails={nestedItems}/>
+
               )
             })
           }
@@ -65,6 +71,7 @@ function App() {
         )
       })
     } */}
+
 
 
 
