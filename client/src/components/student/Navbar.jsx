@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { assets } from '../../assets/assets'
 import { Link } from 'react-router-dom'
 import { UserButton, useUser, useClerk } from '@clerk/clerk-react'
+import { Appcontext } from '../../context/Mycontext'
 
 const Navbar = () => {
 
@@ -9,12 +10,17 @@ const Navbar = () => {
   const { openSignIn } = useClerk();
   const { user } = useUser();
   const isCourseListPage = location.pathname.includes('/course-list');
+  const {navigate }=useContext(Appcontext);
+   const onImageHandler =()=>{
+      navigate('/')
+      
+    }
 
 
 
   return (
     <div className={`${isCourseListPage ? 'bg-white' : 'bg-cyan-100/70'} flex items-center justify-between px-4 sm:px-10 md:px-14 lg:px-36 border-b border-gray-500 py-4`}>
-      <img src={assets.logo} alt="logo" className='w-28 lg:w-32 cursor-pointer' />
+      <img onClick={onImageHandler} src={assets.logo} alt="logo" className='w-28 lg:w-32 cursor-pointer' />
       <div className='hidden md:flex items-center gap-5 text-gray-500'>
         <div className='flex items-center gap-5'>
           {user &&
