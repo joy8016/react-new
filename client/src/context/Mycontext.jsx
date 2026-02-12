@@ -9,14 +9,40 @@ export const AppContextProvider =({children})=>{
     const navigate = useNavigate();
 
     const [allcourses, setAllcourses] = useState([]);
+    const[isEducator, setIsEducator]=useState(true);
+
     const fetchAllcourses =async ()=>{
         setAllcourses(dummyCourses);
+       
+
     }
+  
+
+    // only for testimonials section
+
+ 
+
+    //function to calculate average raigng of course
+    const calculateRating = (course)=>{
+        if(course.courseRatings.length === 0){
+            return 0;
+        }
+        let totalRating = 0;
+        course.courseRatings.forEach (rating =>{
+            totalRating+=rating.rating;
+        })
+        return totalRating /course.courseRatings.length
+    }
+
+
     useEffect(()=>{
         fetchAllcourses();
+    
     },[])
+
+
     const value ={
-        currency, allcourses,navigate
+        currency, allcourses,navigate,calculateRating,isEducator, setIsEducator
 
     }
     return (

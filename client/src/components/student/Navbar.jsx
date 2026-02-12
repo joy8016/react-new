@@ -10,11 +10,13 @@ const Navbar = () => {
   const { openSignIn } = useClerk();
   const { user } = useUser();
   const isCourseListPage = location.pathname.includes('/course-list');
-  const {navigate }=useContext(Appcontext);
-   const onImageHandler =()=>{
-      navigate('/')
-      
-    }
+  const { navigate } = useContext(Appcontext);
+  const onImageHandler = () => {
+    navigate('/')
+
+  }
+  const{iseducator , setIsEducator}=useContext(Appcontext);
+
 
 
 
@@ -26,7 +28,7 @@ const Navbar = () => {
           {user &&
             <>
 
-              <button>Become Educator</button>
+              <button onClick={()=>{navigate('/educator')}}>{iseducator?"Educator": "Become Educator"}</button>
               |<Link to={'/my-enrollments'}>my enrollments
               </Link>
             </>
@@ -36,12 +38,15 @@ const Navbar = () => {
           <button onClick={() => openSignIn()} className='bg-blue-600 text-white px-5 py-3 rounded-full'>Create Account</button>}
 
       </div>
+
+      {/* //for mobile screen ui */}
+
       <div className='md:hidden flex items-center gap-2 sm:gap-5 text-gray-500'>
         <div className='flex items-center gap-3'>
-           {user &&
+          {user &&
             <>
 
-              <button>Become Educator</button>
+              <button onClick={()=>{navigate('/educator')}}>{iseducator?"Educator": "Become Educator"}</button>
               |<Link to={'/my-enrollments'}>my enrollments
               </Link>
             </>
@@ -50,10 +55,10 @@ const Navbar = () => {
 
         </div>
         {
-          user ? <UserButton/>:
-           <button onClick={()=>openSignIn()} ><img src={assets.user_icon} alt="" /></button>
+          user ? <UserButton /> :
+            <button onClick={() => openSignIn()} ><img src={assets.user_icon} alt="" /></button>
         }
-       
+
 
       </div>
     </div>
