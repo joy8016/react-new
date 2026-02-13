@@ -8,7 +8,7 @@ const Search = ({data}) => {
 
   const onSubmitHandler =(e)=>{
     e.preventDefault();
-    navigate('./course-list/' + input)
+    navigate('/course-list/'+ input)
   }
   const onChangeHandler =(e)=>{
     setInput(e.target.value);
