@@ -6,6 +6,7 @@ import Coursecard from '../../components/student/Coursecard'
 import TestimonialSection from '../../components/student/TestimonialSection'
 import CallToAction from '../../components/student/CallToAction'
 import Footer from '../../components/student/Footer'
+import CouseDetails from './CourseDetails'
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
    <CourseSection/>
    <TestimonialSection/>
    <CallToAction/>
+   
    <Footer/>
  
  

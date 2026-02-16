@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Routes, useMatch } from 'react-router-dom'
 import Home from './pages/student/Home'
 import CoursesList from './pages/student/CoursesList'
-import CouseDetails from './pages/student/CouseDetails'
+import CourseDetails from './pages/student/CourseDetails'
 import Myenrollment from './pages/student/Myenrollment'
 import Player from './pages/student/Player'
 import Loading from './components/student/Loading'
@@ -27,7 +27,7 @@ const App = () => {
         
 
 
-        <Route path='/course/:id' element={<CouseDetails />} />
+        <Route path='/course/:id' element={<CourseDetails />} />
         <Route path='/my-enrollment' element={<Myenrollment />} />
         <Route path='/player/:courseId' element={<Player />} />
         <Route path='/loading/:path' element={<Loading />} />
