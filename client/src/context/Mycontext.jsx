@@ -36,16 +36,33 @@ export const AppContextProvider =({children})=>{
         return totalRating /course.courseRatings.length
     }
 
-    // function to calculate course chapter time
+    //function to calculate course chapter time
 
-    const calculateChapterTime = (chapter)=>{
+    function calculateChapterTime (chapter){
+        let time = 0;
+        chapter.chapterContent.map((lecture)=>time+=lecture.lectureDuration)
+        return humanizeDuration(time *60*1000, {units:["h", "m"]})
+    }
+
+    // function to calculate course duration
+
+    const calculateCourseDuration = (chapter)=>{
         let time = 0; 
         chapter.chapterContent.map((lecture)=>time +=lecture.lectureDuration)
         return humanizeDuration(time *60 +10000 , {units:['h', 'm']})
     }
 
-    // function to calculate course duration
-    const calculateChapterDuration =()=>
+    // function  calculate  to no of lectures in the courses 
+    const calculateNoOfLectures =(course)=>{
+        let totallectures = 0;
+        course.courseContent.forEach(chapter =>{
+            if(Array.isArray(chapter.chapterContent)){
+                totallectures+=chapter.chapterContent.length
+            }
+        });
+        return totallectures;
+
+    }
 
 
     useEffect(()=>{
@@ -55,7 +72,7 @@ export const AppContextProvider =({children})=>{
 
 
     const value ={
-        currency, allcourses,navigate,calculateRating,isEducator, setIsEducator
+        currency, allcourses,navigate,calculateRating,isEducator, setIsEducator,calculateChapterTime,calculateCourseDuration,calculateNoOfLectures
 
     }
     return (
